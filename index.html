@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cognios | Content Liquidity Protocol</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #07101D;
+      --bg-card: #0D192B;
+      --logo-cyan: #00E1D9;
+      --logo-purple: #8A2BE2;
+      --text-main: #F0F4F8;
+      --text-muted: #94A3B8;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+      background-image:
+        radial-gradient(circle at 0% 0%, rgba(138, 43, 226, 0.05), transparent 30%),
+        radial-gradient(circle at 100% 100%, rgba(0, 225, 217, 0.05), transparent 30%);
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-out forwards;
+      opacity: 0;
+    }
+
+    .delay-1 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.4s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--logo-cyan), var(--logo-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Float animacija za logo */
+    .float-anim {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .logo-container {
+      background-color: #FFFFFF;
+      box-shadow: 0 20px 50px -15px rgba(138, 43, 226, 0.5),
+        0 0 30px -10px rgba(0, 225, 217, 0.4);
+      border-radius: 28px;
+      position: relative;
+    }
+
+    /* Dekorativni prsten oko logoa */
+    .logo-container::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 30px;
+      background: linear-gradient(45deg, var(--logo-cyan), var(--logo-purple));
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    .feature-card {
+      background-color: var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      border-color: rgba(0, 225, 217, 0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px -10px rgba(0, 225, 217, 0.1);
+    }
+
+    .pulse-dot-cyan {
+      background-color: var(--logo-cyan);
+      box-shadow: 0 0 10px var(--logo-cyan);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex flex-col overflow-x-hidden selection:bg-[#8A2BE2] selection:text-white">
+
+  <main class="flex-grow flex items-center justify-center p-6 lg:p-12 w-full max-w-7xl mx-auto mt-12">
+    <div class="flex flex-col lg:flex-row items-center justify-between gap-16 w-full">
+
+      <div class="w-full lg:w-1/2 space-y-8 text-center lg:text-left fade-in delay-1 z-10">
+        <div
+          class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-[rgba(0,225,217,0.2)] bg-[rgba(0,225,217,0.05)]">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 pulse-dot-cyan"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 pulse-dot-cyan"></span>
+          </span>
+          <span class="text-xs font-bold tracking-widest uppercase text-[var(--logo-cyan)]">System In Progress</span>
+        </div>
+
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight uppercase leading-[1.1]">
+          Future of<br>
+          <span class="gradient-text">Digital Assets</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-[var(--text-muted)] max-w-xl mx-auto lg:mx-0 leading-relaxed">
+          Cognios transforms educational content into liquid assets. A Solana-native protocol bridging the gap between
+          creators and a decentralized secondary market.
+        </p>
+      </div>
+
+      <div class="w-full lg:w-1/2 flex justify-center lg:justify-end fade-in delay-2 z-10">
+        <div class="logo-container float-anim w-64 md:w-80">
+          <img src="assets/logo.png" alt="Cognios Protocol" class="w-full h-auto rounded-2xl">
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <section class="w-full max-w-7xl mx-auto p-6 lg:p-12 mb-12 fade-in delay-3 z-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="feature-card p-6 md:p-8 rounded-3xl">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-6"
+          style="background: rgba(138, 43, 226, 0.1); color: var(--logo-purple);">
+          <i class="fas fa-key"></i>
+        </div>
+        <h3 class="text-xl font-bold uppercase tracking-tight mb-3">True Ownership</h3>
+        <p class="text-[var(--text-muted)] text-sm leading-relaxed">Your knowledge is your asset. Access strictly gated
+          by NFTs on the Solana blockchain.</p>
+      </div>
+
+      <div class="feature-card p-6 md:p-8 rounded-3xl">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-6"
+          style="background: rgba(0, 225, 217, 0.1); color: var(--logo-cyan);">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3 class="text-xl font-bold uppercase tracking-tight mb-3">Active Markets</h3>
+        <p class="text-[var(--text-muted)] text-sm leading-relaxed">Trade course licenses instantly. Perpetual royalties
+          for creators, high liquidity for learners.</p>
+      </div>
+
+      <div class="feature-card p-6 md:p-8 rounded-3xl">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-6"
+          style="background: rgba(255, 255, 255, 0.05); color: #FFFFFF;">
+          <i class="fas fa-lock"></i>
+        </div>
+        <h3 class="text-xl font-bold uppercase tracking-tight mb-3">Trustless Escrow</h3>
+        <p class="text-[var(--text-muted)] text-sm leading-relaxed">Programmable 24h escrow and automatic settlement
+          logic ensuring absolute trust.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer
+    class="w-full text-center p-8 border-t border-[rgba(255,255,255,0.05)] text-[var(--text-muted)] text-sm z-10 space-y-4">
+    <div class="flex justify-center gap-6">
+      <a href="#" class="hover:text-[var(--logo-cyan)] transition-colors"><i class="fab fa-twitter text-2xl"></i></a>
+      <a href="#" class="hover:text-[var(--logo-cyan)] transition-colors"><i class="fab fa-discord text-2xl"></i></a>
+    </div>
+    <p>© 2026 Cognios Protocol. Powered by Solana.</p>
+  </footer>
+
+</body>
+
+</html>
